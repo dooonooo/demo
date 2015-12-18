@@ -4,17 +4,17 @@
 
 ### FORM
 input 表单
-[链接](./form/input.png)
+[链接](./form/input.html)
 
 简单注册页面
-[链接](./form/simple-register.png)
+[链接](./form/simple-register.html)
 
 注册页面
-[链接](./form/register.png)
+[链接](./form/register.html)
 
 ###VIDEO
 
 音频播放器
-[链接](./video.html)
+[链接](./video/audio.html)
 
 
