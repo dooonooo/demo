@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册验证页面</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 50px auto;
+            width: 600px;
+            padding: 20px;
+            border: 1px solid #c88e8e;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<blockquote>
+    <p>注册验证页面</p>
+</blockquote>
+
+<form class="form-horizontal" name="myform" action="#" method="post">
+
+    <div class="form-group">
+        <label for="username" class="control-label col-sm-3"> 用户名</label>
+        <div class="col-sm-7"><input type="text" name="username" id="username" class="form-control" required
+                                     placeholder="请输入用户名">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="control-label col-sm-3">电子邮箱</label>
+        <div class=" col-sm-7"><input type="email" name="email" id="email" class="form-control" required
+                                      placeholder="xxx@xxx.com"></div>
+    </div>
+    <div class="form-group">
+        <label for="phone" class="control-label col-sm-3">手机号码</label>
+        <div class="col-sm-7"><input type="tel" name="phone" id="phone" class="form-control"
+                                     pattern="(13\d|14[57]|15[^4,\D]|17[678]|18\d)\d{8}|170[059]\d{7}"
+                                     placeholder="请输入手机号码"></div>
+    </div>
+    <div class="form-group">
+        <label for="birth" class="control-label col-sm-3">生日</label>
+        <div class="col-sm-7"><input type="date" name="birth" id="birth" class="form-control"></div>
+    </div>
+    <div class="form-group">
+        <label for="qq" class="control-label col-sm-3">QQ</label>
+        <div class="col-sm-7"><input type="text" name="qq" id="qq" class="form-control" min="5" max="10"
+                                     pattern="[1-9][0-9]{4,9}" placeholder="请输入QQ号码"></div>
+    </div>
+    <div class="form-group">
+        <label for="domain" class="control-label col-sm-3">个人站点</label>
+        <div class="col-sm-7"><input type="url" name="domain" id="domain" class="form-control" placeholder="http://">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label col-sm-3">密码</label>
+        <div class="col-sm-7"><input type="password" name="password" id="password" class="form-control" required min="6"
+                                     max="16" placeholder="请输入密码"></div>
+    </div>
+    <div class="form-group">
+        <label for="repassword" class="control-label col-sm-3">重复密码</label>
+        <div class="col-sm-7"><input type="password" id="repassword" class="form-control" required min="6" max="16"
+                                     placeholder="请再次输入密码">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">注册</button>
+        </div>
+    </div>
+</form>
+
+<script>
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线音频播放器</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 330px;
+        }
+
+        .list {
+            height: 100px;
+            width: 300px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin: 0 0 10px 0;
+        }
+
+        .list ul {
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        .list li {
+            list-style-type: none;
+            margin: 0;
+            padding: 8px;
+        }
+
+        .list li:hover {
+            background-color: #EFEFEF;
+        }
+
+        .run {
+            background-color: #FDDB6F;
+        }
+
+        .box {
+            border: 1px solid #464646;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 300px;
+            background-image: linear-gradient(top, rgb(53, 111, 143), #f6f6f6);
+
+        }
+    </style>
+</head>
+<body>
+<header><h1>在线音频播放器</h1></header>
+<div class="box">
+
+    <div class="list">
+        <!--播放列表-->
+        <ul>
+            <li class="run">song.mp3</li>
+            <li>horse.mp3</li>
+        </ul>
+    </div>
+
+    <div>
+        <!--播放器-->
+        <audio src="./i/song.mp3" controls>非常抱歉,你的浏览器不支持audio标签</audio>
+    </div>
+
+</div>
+<script>
+    var slice = Array.prototype.slice, audio = document.querySelector('audio'),
+            items = slice.call(document.querySelectorAll('.list li'), 0),
+            run;
+    items.forEach(function (item) {
+        item.addEventListener('click', function () {
+            run = document.querySelector('li.run');
+            run.className = '';
+            item.className = 'run';
+            audio.src = audio.src.replace(run.innerHTML, item.innerHTML)
+        })
+    })
+</script>
+</body>
+</html>
