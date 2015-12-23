@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>通过Wi-Fi定位</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+body {
+        margin: 50px auto;
+        width: 900px;
+        padding: 20px;
+        border: 1px solid #c88e8e;
+        border-radius: 15px;
+        height: 430px;
+    }
+    
+    .item {
+        width: 430px;
+        float: left;
+        padding-right: 2px;
+    }
+    
+    .info {height: 100px}
+    #map,#WIFI{
+    	height: 280px;
+    	width: 430px;
+    	
+    }
+}
+    </style>
+</head>
+
+<body>
+    <h2>通过Wi-Fi获取经纬度，显示当前位置</h2>
+    <div class="item">
+        <div id="ipinfo" class="ipinfo"> </div>
+        <div id="map"></div>
+        <div id="wifiinfo" class="info"></div>
+        <div id="WIFI"></div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    function viaWIFI() {
+        // body...
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var info = $("#wifiinfo"),
+                    longlat_html =
+                    '<h4>wifi地址定位精度</h4>'＋
+                '<ul>' +
+                '<li>经度：'＋
+                position.coords.longitude + '<li>' +
+                    '<li>纬度：'＋
+                position.coords.latitude + '<li>' +
+                    '</ul>';
+                info.html(longlat_html);
+                showMap(position.coords, document.getElementById('WIFI'));
+            });
+        } else {
+            var wifi = $("#WIFI");
+            wifi.html("你的浏览器不支持Wi-Fi定位").css('color', '#F30')
+        }
+    }
+    viaIP();
+    viaWIFI();
+    </script>
+</body>
+
+</html>
