@@ -1,0 +1,189 @@
+//
+//page-content
+//
+// 
+#welcome {
+    height: 300px;
+    background-color: #191919;
+    color: #fff;
+    position: relative;
+    .welcome-message {
+        background-color: hsla(0, 0, 1%, 0.4); // translucent overlay
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px 40px;
+        strong {
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+    }
+    .btn {
+        margin-top: 16px;
+    }
+    @media (max-width: @screen-sm-max) {
+        background: #191919 url('../img/subway-906x600.jpg') center center no-repeat;
+    }
+    @media (min-width: @screen-sm-min) {
+        height: 480px;
+        .container {
+            position: relative;
+        }
+        .welcome-message {
+            right: 20%;
+            bottom: auto;
+            strong {
+                display: block;
+            }
+        }
+    }
+    @media (min-width: @screen-md-min) {
+        height: 540px;
+        background: #191919 url('../img/subway-1600x1060.jpg') center center no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        .welcome-message {
+            right: 50%;
+        }
+    }
+}
+
+//Features Section
+#features {
+    .features-item {
+        text-align: center;
+        padding: 20px;
+        height: 270px;
+    }
+    .icon {
+        font-size: 90px;
+    }
+    @media(max-width:@screen-xs-max) {
+        max-width: 320px;
+        .center-block();
+    }
+}
+
+//plan Section
+#plan {
+    table {
+        border: 1px solid @table-border-color;
+        thead th {
+            text-align: center;
+            background-color: @gray-light;
+            color: #fff;
+            padding-top: 12px;
+            padding-buttom: 32px;
+            h2 {
+                text-transform: uppercase;
+            }
+            .price {
+                font-size: 7em;
+                line-height: 1;
+                margin-left: -0.25em;
+                span {
+                    font-size: .5em;
+                    vertical-align: super;
+                }
+            }
+        }
+        tbody {
+            td {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+        a.btn {
+            .btn-lg;
+            display: block;
+            width: 100%;
+            background-color: @gray-light;
+            color: #fff;
+        }
+    }
+}
+@media(max-width:@screen-sm-max) {
+    #plan .plan-item {
+        max-width: 400px;
+        .center-block();
+    }
+}
+
+#plan .plan-basic table {
+    thead th {
+        background-color: @brand-primary;
+    }
+    .btn {
+        .button-variant(#fff;
+        @brand-primary;
+        darken(@brand-primary,
+        5%));
+    }
+}
+
+#plan .plan-mium table {
+    thead th {
+        background-color: @brand-secondary;
+    }
+    .btn {
+        .button-variant(#fff;
+        @brand-secondary;
+        darken(@brand-secondary,
+        5%));
+    }
+}
+
+#plan .plan-pro table {
+    thead th {
+        background-color: @brand-tertiary;
+    }
+    .btn {
+        .button-variant(#fff;
+        @brand-tertiary;
+        darken(@brand-tertiary,
+        5%));
+    }
+}
+
+
+//突出premium plan
+@media(min-width:@screen-md-min){
+    //将basic和pro缩小一些
+    #plan .plan-basic table,
+    #plan .plan-pro table{
+        width:90%;
+        margin-top:36px;
+        }
+    //将premium放大一些    
+    #plan .plan-mium table{
+        thead th{
+            font-size:1.5em;
+            }
+            h2{
+                font-size:1.5em;
+                }
+        }
+        a.btn{
+            font-size:2em;
+            padding-top:24px;
+            padding-bottom:24px;
+        }
+        //将basic、premium、pro表格靠近一些
+        #plan .plan-basic{
+            margin-right:-58px;
+            margin-left:58px;
+            z-index:1;
+            }
+            #plan .plan-pro{
+            margin-left:-30px;
+            z-index:1;
+            }
+            #plan .plan-mium{
+                z-index:100;
+                }
+    
+    }
